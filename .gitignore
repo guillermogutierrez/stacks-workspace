@@ -1,0 +1,6 @@
+/repos/
+/modules/
+/tests/
+/workloads/
+/configs/emulatorcert.crt
+/.idea/

@@ -102,15 +102,15 @@ if [ -e "${WORKLOAD_DIR}/java/pom.xml.versionsBackup" ]; then
 	printf "\n------------------------------------------------------------------------\n"
 	git -C ${WORKLOAD_DIR} commit -m "${COMMIT_MESSAGE}"
 
-	# if [ "${NEW_BRANCH}" ]; then
-	# 	git -C ${WORKLOAD_DIR} push --set-upstream origin ${BRANCH}
-	# else
-	# 	git -C ${WORKLOAD_DIR} push
-	# fi
+	 if [ "${NEW_BRANCH}" ]; then
+	 	git -C ${WORKLOAD_DIR} push --set-upstream origin ${BRANCH}
+	 else
+	 	git -C ${WORKLOAD_DIR} push
+	 fi
 
-	# if [ ${RUN_PIPELINE} ]; then
-	# 	az pipelines run --branch ${BRANCH} --name amido.${MODULE}
-	# fi
+	 if [ ${RUN_PIPELINE} ]; then
+	 	az pipelines run --branch ${BRANCH} --name amido.${MODULE}
+	 fi
 else
 	printf "${YELLOW}No updates found for the component ${MODULE}"
 fi
